@@ -41,15 +41,19 @@ public class Mage{
         если же и урон одинаковый, то вернуть строку draw (ничья).
          */
 
-        if(this.type == "fire"){
-
-        } else if(this.type == "ice"){
-
-        } else if(this.type == "earth"){
-
+        if (this.type.equals("fire") && mage.type.equals("ice")) return this.name;
+        else if (this.type.equals("ice") && mage.type.equals("earth")) return this.name;
+        else if (this.type.equals("earth") && mage.type.equals("fire")) return this.name;
+        else if (!this.type.equals(mage.type)) return mage.name;
+        else {
+            if (this.level > mage.level) return this.name;
+            else if (this.level < mage.level) return mage.name;
+            else {
+                if (this.damage > mage.damage) return this.name;
+                else if (this.damage < mage.damage) return mage.name;
+                else return "draw";
+            }
         }
-
-        return mage.name;
     }
 
 }
