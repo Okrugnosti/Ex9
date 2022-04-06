@@ -62,6 +62,7 @@ class Mail{
 
         System.out.println(m1.fight(m2));
 
+        //тест
 
     }
 }
